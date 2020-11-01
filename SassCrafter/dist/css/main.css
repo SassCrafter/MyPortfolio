@@ -374,67 +374,60 @@ img {
   text-align: center;
 }
 
-.portfolio-project {
+.project {
   height: 20rem;
   background: #fff;
   box-shadow: 0.3rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
-  padding: 1.5rem 1rem;
   position: relative;
   overflow: hidden;
 }
 
-.portfolio-project:hover .portfolio-project-content {
-  clip-path: polygon(0 100%, 100% 100%, 100% 80%, 0 100%);
+.project:hover .project-img {
+  transform: scale(1.1);
 }
 
-.portfolio-project:hover .portfolio-project-title {
-  transform: translateX(0);
-}
-
-.portfolio-project-link {
+.project-link {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.portfolio-project-title {
-  color: #fff;
-  font-size: 1.5rem;
-  text-transform: capitalize;
-  padding: 0.5rem 1rem;
-  border-top-right-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
-  background: rgba(0, 0, 0, 0.6);
-  position: absolute;
-  top: 20%;
-  left: 0;
-  transform: translateX(-102%);
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: transform 500ms ease-in-out;
 }
 
-.portfolio-project-content {
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+.project-content {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 20%;
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
-  transition: all 500ms ease-in-out;
-}
-
-.portfolio-project-content ul {
-  margin-right: 1rem;
   align-items: center;
-}
-
-.portfolio-project-content ul a {
+  justify-content: space-between;
+  padding: 1rem;
   color: #fff;
 }
 
-.portfolio .four-cards {
-  background: url("../img/projects/four-cards.jpg") no-repeat center center/cover;
+.project-title {
+  font-size: 1.6rem;
+  text-transform: capitalize;
+}
+
+.project ul {
+  display: flex;
+}
+
+.project ul li:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.project ul a {
+  color: #fff;
+  font-size: 1.8rem;
+  padding: 0.5rem;
 }

@@ -1,70 +1,66 @@
 .portfolio {
   text-align: center;
-  &-project {
-    height: 20rem;
-    background: #fff;
-    box-shadow: 0.3rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
-    padding: 1.5rem 1rem;
-    position: relative;
-    overflow: hidden;
+}
 
-    &:hover {
-      .portfolio-project-content {
-        -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 80%, 0 100%);
-        clip-path: polygon(0 100%, 100% 100%, 100% 80%, 0 100%);
-      }
-      .portfolio-project-title {
-        transform: translateX(0);
-      }
-    }
+.project {
+  height: 20rem;
+  background: #fff;
+  box-shadow: 0.3rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  //padding: 1.5rem 1rem;
+  position: relative;
+  overflow: hidden;
 
-    &-link {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
-
-    &-title {
-      color: #fff;
-      font-size: 1.5rem;
-      text-transform: capitalize;
-      padding: 0.5rem 1rem;
-      border-top-right-radius: 0.5rem;
-      border-bottom-right-radius: 0.5rem;
-      background: rgba(0, 0, 0, 0.6);
-      position: absolute;
-      top: 20%;
-      left: 0;
-      transform: translateX(-102%);
-      transition: transform $t-time ease-in-out;
-    }
-
-    &-content {
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-end;
-      -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
-      clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
-      transition: all $t-time ease-in-out;
-
-      ul {
-        margin-right: 1rem;
-        align-items: center;
-
-        a {
-          color: #fff;
-        }
-      }
+  &:hover {
+    .project-img {
+      transform: scale(1.1);
     }
   }
 
-  .four-cards {
-    @include bg-image("../img/projects/four-cards.jpg");
+  &-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform $t-time ease-in-out;
+  }
+
+  &-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: $overlay-color;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    color: #fff;
+  }
+
+  &-title {
+    font-size: 1.6rem;
+    text-transform: capitalize;
+  }
+
+  ul {
+    display: flex;
+
+    li {
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+
+    a {
+      color: #fff;
+      font-size: 1.8rem;
+      padding: 0.5rem;
+    }
   }
 }
