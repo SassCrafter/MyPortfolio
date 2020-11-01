@@ -1,0 +1,144 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background-color: #ecf2f8;
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.1;
+}
+
+.testimonials {
+  min-height: 100vh;
+  padding: 5rem 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-areas: "first" "second" "third" "fourth" "fifth";
+  grid-gap: 1.5rem;
+}
+
+.first {
+  grid-area: first;
+  position: relative;
+}
+
+.first .card-profile,
+.first .card-title {
+  position: relative;
+  z-index: 10;
+}
+
+.first::before {
+  content: "";
+  width: 10rem;
+  height: 10rem;
+  background: url("../images/bg-pattern-quotation.svg");
+  position: absolute;
+  top: 2rem;
+  right: 8rem;
+}
+
+.second {
+  grid-area: second;
+}
+
+.third {
+  grid-area: third;
+}
+
+.fourth {
+  grid-area: fourth;
+}
+
+.fifth {
+  grid-area: fifth;
+}
+
+.card {
+  padding: 3rem 2rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: #333;
+}
+
+.card-profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.card-profile-img {
+  width: 4rem;
+  border-radius: 50%;
+}
+
+.card-profile-name {
+  font-size: 1.5rem;
+  margin-left: 2rem;
+}
+
+.card-profile-name span {
+  display: block;
+  opacity: 50%;
+}
+
+.card-title {
+  font-size: 2.1rem;
+  margin-bottom: 2rem;
+}
+
+.card-text {
+  font-size: 1.5rem;
+  opacity: 0.7;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.bg-violet {
+  background: #7541c8;
+  color: #fff;
+}
+
+.bg-grayish-blue {
+  background: #48556a;
+  color: #fff;
+}
+
+.bg-blackish-blue {
+  background: #19212e;
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .grid {
+    grid-template-areas: "first first fifth" "second second fifth" "third fourth fourth";
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .grid {
+    grid-template-areas: "first first second fifth" "third fourth fourth fifth";
+  }
+}

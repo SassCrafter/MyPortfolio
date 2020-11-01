@@ -1,0 +1,11 @@
+.access {
+  @include media("tablet") {
+    .form {
+      &-group {
+        &-input {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

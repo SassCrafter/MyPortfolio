@@ -1,0 +1,174 @@
+// Mixins and Functions
+@function set-text-color($color) {
+  @if (lightness($color) > 60) {
+    @return #333;
+  } @else {
+    @return #fff;
+  }
+}
+
+@mixin set-bg($color) {
+  background: $color;
+  color: set-text-color($color);
+}
+
+// Vars
+$moderate-violet: hsl(263, 55%, 52%);
+$very-dark-grayish-blue: hsl(217, 19%, 35%);
+$very-dark-blackish-blue: hsl(219, 29%, 14%);
+$white: hsl(0, 0%, 100%);
+$dark-color: #333;
+
+$light-gray: hsl(0, 0%, 81%);
+$light-grayish-blue: hsl(210, 46%, 95%);
+
+$font-stack: "Barlow Semi Condensed", Arial, Helvetica, sans-serif;
+
+$max-width: 1400px;
+
+// Reset
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-stack;
+  line-height: 1.6;
+  background-color: $light-grayish-blue;
+  color: $dark-color;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.1;
+}
+
+.testimonials {
+  min-height: 100vh;
+  padding: 5rem 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-areas:
+    "first"
+    "second"
+    "third"
+    "fourth"
+    "fifth";
+  grid-gap: 1.5rem;
+}
+
+.first {
+  grid-area: first;
+  position: relative;
+
+  .card-profile,
+  .card-title {
+    position: relative;
+    z-index: 10;
+  }
+
+  &::before {
+    content: "";
+    width: 10rem;
+    height: 10rem;
+    background: url("../images/bg-pattern-quotation.svg");
+    position: absolute;
+    top: 2rem;
+    right: 8rem;
+  }
+}
+.second {
+  grid-area: second;
+}
+.third {
+  grid-area: third;
+}
+.fourth {
+  grid-area: fourth;
+}
+.fifth {
+  grid-area: fifth;
+}
+
+.card {
+  padding: 3rem 2rem;
+  border-radius: 0.5rem;
+  @include set-bg(#fff);
+
+  &-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    &-img {
+      width: 4rem;
+      border-radius: 50%;
+    }
+    &-name {
+      font-size: 1.5rem;
+      margin-left: 2rem;
+
+      span {
+        display: block;
+        opacity: 50%;
+      }
+    }
+  }
+
+  &-title {
+    font-size: 2.1rem;
+    margin-bottom: 2rem;
+  }
+
+  &-text {
+    font-size: 1.5rem;
+    opacity: 0.7;
+  }
+}
+
+// Utilities
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.bg {
+  &-violet {
+    @include set-bg($moderate-violet);
+  }
+  &-grayish-blue {
+    @include set-bg($very-dark-grayish-blue);
+  }
+  &-blackish-blue {
+    @include set-bg($very-dark-blackish-blue);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .grid {
+    grid-template-areas:
+      "first first fifth"
+      "second second fifth"
+      "third fourth fourth";
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .grid {
+    grid-template-areas:
+      "first first second fifth"
+      "third fourth fourth fifth";
+  }
+}

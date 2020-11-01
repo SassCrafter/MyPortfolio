@@ -1,0 +1,46 @@
+.form {
+  width: 90%;
+  margin: 0 auto;
+
+  &-group {
+    margin-bottom: 1.5rem;
+
+    &-input {
+      border: 1px solid $desaturated-blue;
+      border-radius: 0.2rem;
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      cursor: pointer;
+
+      &::placeholder {
+        color: $light-gray;
+      }
+
+      &:hover,
+      &:focus {
+        outline: 1px solid $light-grayish-blue;
+        border-width: 2px;
+      }
+    }
+  }
+
+  @include media("tablet") {
+    width: 100%;
+
+    &-group {
+      display: flex;
+      //justify-content: space-between;
+      &-input {
+        margin-right: 1rem;
+        margin-bottom: 0;
+        width: 60%;
+      }
+    }
+    .btn {
+      display: inline-block;
+      width: auto;
+      //margin-left: 1rem;
+    }
+  }
+}

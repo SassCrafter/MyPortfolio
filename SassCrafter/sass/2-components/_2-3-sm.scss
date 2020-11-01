@@ -1,0 +1,24 @@
+.sm {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  &-item {
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+
+  &-link {
+    color: #fff;
+    font-size: 2.5rem;
+    padding: 0.5rem;
+    transition: color $t-time linear;
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+}

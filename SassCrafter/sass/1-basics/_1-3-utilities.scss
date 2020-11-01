@@ -1,0 +1,91 @@
+// Utilities
+.container {
+  max-width: $max-width;
+  height: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+// Text
+.small {
+  font-size: 2rem;
+  font-weight: 300;
+  color: $main-color;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.large {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2.8rem;
+  text-transform: capitalize;
+  font-weight: 500;
+  margin: 0 auto 2.5rem auto;
+  max-width: 80%;
+}
+
+.lower {
+  text-transform: lowercase;
+}
+
+// Flex
+.flex {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.flex-between {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Grid
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+}
+
+.list,
+.list-row {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  //padding: 1rem 0;
+
+  &-item {
+    &:not(:last-child) {
+      margin: 0.5rem 0;
+    }
+  }
+
+  &-link {
+    display: inline-block;
+    color: $dark-color;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    transition: color $t-time linear;
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+}
+
+.list-row {
+  flex-direction: row;
+  .list-item {
+    &:not(:last-child) {
+      margin: 0 0.5rem;
+    }
+  }
+}

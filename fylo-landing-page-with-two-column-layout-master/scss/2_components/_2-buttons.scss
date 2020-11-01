@@ -1,0 +1,20 @@
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 0.3rem;
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  @include set-bg($bright-blue);
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  transition: opacity $t-delay linear;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &-block {
+    display: block;
+    width: 100%;
+  }
+}

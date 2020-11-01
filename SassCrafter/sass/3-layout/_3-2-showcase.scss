@@ -1,0 +1,29 @@
+.showcase {
+  height: 100vh;
+  background: url("../img/showcase-bg.jpg") no-repeat center bottom/cover;
+  position: relative;
+  color: #fff;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #111111;
+    opacity: 0.85;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &-content {
+    position: relative;
+    z-index: 10;
+  }
+}

@@ -1,0 +1,181 @@
+/* Vars */
+:root {
+  --cyan: hsl(179, 62%, 43%);
+  --lighter-cyan: hsl(179, 47%, 52%);
+  --bright-yellow: hsl(71, 73%, 54%);
+  --light-gray: hsl(204, 43%, 93%);
+  --grayish-blue: hsl(218, 22%, 67%);
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Karla", Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: var(--light-gray);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+  margin-bottom: 1.7rem;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+}
+
+.prices {
+  min-height: 100vh;
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 0;
+}
+
+.grid-item {
+  padding: 4.5rem 3rem;
+  color: #fff;
+  box-shadow: 0 0.5rem;
+}
+
+.grid-item:first-child {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.grid-item:first-child .title {
+  color: var(--bright-yellow);
+}
+.grid-item:last-child {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+/* Subscription */
+
+.subscription .description {
+  color: #fff;
+}
+
+.price {
+  font-size: 5rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+}
+
+.price small {
+  font-size: 1.5rem;
+  color: var(--light-gray);
+  margin-left: 1rem;
+}
+
+/* Utilities */
+.container {
+  max-width: 850px;
+  padding: 0 2rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Bg */
+.bg-white {
+  background: #fff;
+  color: #333;
+}
+.bg-cyan {
+  background: var(--cyan);
+}
+.bg-blue {
+  background: var(--lighter-cyan);
+}
+.bg-blue a {
+  color: #fff;
+}
+
+/* Text */
+.large {
+  font-size: 3.4rem;
+  color: var(--cyan);
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+}
+
+.description {
+  font-size: 1.8rem;
+  color: var(--grayish-blue);
+  margin-bottom: 1rem;
+}
+
+/* Btn */
+.btn {
+  display: block;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 2rem;
+  text-transform: capitalize;
+  text-align: center;
+  color: #fff;
+  background: var(--bright-yellow);
+}
+
+.links {
+  margin-top: 2rem;
+}
+
+.links li {
+  margin: 0.5rem 0;
+}
+
+.links a {
+  padding: 0.5rem 0;
+  font-size: 1.6rem;
+}
+
+@media screen and (min-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .spans {
+    grid-column: 1 / span 2;
+  }
+  .grid-item:last-child {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 1rem;
+  }
+  .grid-item:nth-child(2) {
+    border-bottom-left-radius: 1rem;
+  }
+}

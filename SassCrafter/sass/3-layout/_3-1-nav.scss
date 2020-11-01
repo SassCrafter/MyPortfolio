@@ -1,0 +1,33 @@
+.nav {
+  width: $nav-width;
+  height: $header-height;
+  @include set-bg($black);
+  position: fixed;
+  top: 0;
+  left: 10%;
+  z-index: 1001;
+
+  a {
+    color: #fff;
+  }
+
+  &-list {
+    position: fixed;
+    top: $header-height;
+    left: 10%;
+    width: $nav-width;
+    height: 0;
+    background: $black;
+    overflow: hidden;
+    z-index: 1000;
+    transition: height $t-time ease-in-out;
+  }
+}
+
+.menu-open ~ .nav-list {
+  height: 13rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+}

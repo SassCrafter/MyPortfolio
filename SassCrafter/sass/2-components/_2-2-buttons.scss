@@ -1,0 +1,34 @@
+.btn {
+  cursor: pointer;
+  border: none;
+  display: inline-block;
+  padding: 1.5rem 2rem;
+  @include set-bg($dark-color);
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: border-color $t-time linear;
+
+  &:hover {
+    border-color: $main-color;
+
+    i {
+      color: $main-color;
+    }
+  }
+
+  i {
+    margin-left: 1rem;
+    transition: color $t-time linear;
+  }
+
+  &-border {
+    background: transparent;
+    border: 1px solid #fff;
+
+    &-black {
+      background: transparent;
+      border: 1px solid $black;
+    }
+  }
+}

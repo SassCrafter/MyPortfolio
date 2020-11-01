@@ -1,0 +1,24 @@
+// Set text color
+@function set-text-color($color) {
+  @if (lightness($color) > 60) {
+    @return $dark-color;
+  } @else {
+    @return #fff;
+  }
+}
+
+// Set bg
+@mixin set-bg($color) {
+  background: $color;
+  color: set-text-color($color);
+}
+
+// BG-image
+@mixin bg-image($path) {
+  background: url($path) no-repeat center center/cover;
+}
+
+// shadow
+@mixin shadow {
+  box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);
+}

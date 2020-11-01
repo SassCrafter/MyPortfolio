@@ -1,0 +1,40 @@
+.footer {
+  padding: 3rem 0;
+
+  &-logo {
+    filter: brightness(0) invert(1);
+    width: 10rem;
+    margin-bottom: 2rem;
+  }
+
+  .flex {
+    &-item {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &-list {
+    li {
+      margin: 0.5rem 0;
+    }
+
+    &-img {
+      width: 1rem;
+      margin-right: 1rem;
+    }
+  }
+  &-link {
+    color: #fff;
+    transition: opacity 500ms linear;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  @include media("tablet") {
+    .flex {
+      align-items: flex-start;
+    }
+  }
+}
