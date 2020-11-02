@@ -22,3 +22,17 @@
 @mixin shadow {
   box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);
 }
+
+// Media
+@mixin media($size) {
+  @if ($size == "tablet") {
+    @media screen and (min-width: $tablet) {
+      @content;
+    }
+  }
+  @if ($size == "pc") {
+    @media screen and (min-width: $pc) {
+      @content;
+    }
+  }
+}
