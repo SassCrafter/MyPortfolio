@@ -163,8 +163,7 @@ section {
   transition: height 500ms 200ms;
 }
 
-.menu-line::before,
-.menu-line::after {
+.menu-line::before, .menu-line::after {
   content: "";
   width: 100%;
   height: 3px;
@@ -185,8 +184,7 @@ section {
   height: 0;
 }
 
-.menu-open .menu-line::before,
-.menu-open .menu-line::after {
+.menu-open .menu-line::before, .menu-open .menu-line::after {
   top: 0;
   transition: transform 500ms ease 500ms, top 500ms ease;
 }
@@ -286,21 +284,18 @@ section {
   transform-origin: 50%;
   background: #ff0077;
   border-radius: 50%;
-  -webkit-animation: circle 0.5s alternate infinite ease;
-          animation: circle 0.5s alternate infinite ease;
+  animation: circle 0.5s alternate infinite ease;
 }
 
 .preloader .circle:nth-child(2) {
   left: 45%;
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 
 .preloader .circle:nth-child(3) {
   left: auto;
   right: 15%;
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
+  animation-delay: 0.3s;
 }
 
 .preloader-title {
@@ -312,23 +307,6 @@ section {
   left: 50%;
   top: 120%;
   transform: translateX(-50%);
-}
-
-@-webkit-keyframes circle {
-  0% {
-    top: 60px;
-    height: 5px;
-    border-radius: 50px 50px 25px 25px;
-    transform: scaleX(1.7);
-  }
-  40% {
-    height: 20px;
-    transform: scaleX(1);
-    border-radius: 50%;
-  }
-  100% {
-    top: 0;
-  }
 }
 
 @keyframes circle {
@@ -345,6 +323,60 @@ section {
   }
   100% {
     top: 0;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  [data-aos="my-fade-(left)"] {
+    transform: translateX(0);
+    opacity: 0;
+    transition: opacity 1000ms ease, transform 1000ms ease;
+  }
+  [data-aos="my-fade-(left)"].aos-animate {
+    opacity: 1;
+  }
+}
+
+[data-aos="my-fade-right"] {
+  opacity: 0;
+  transform: translateX(-10rem);
+  transition: opacity 1000ms ease, transform 1000ms ease;
+}
+
+[data-aos="my-fade-right"].aos-animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+[data-aos="my-fade-left"] {
+  opacity: 0;
+  transform: translateX(10rem);
+  transition: opacity 1000ms ease, transform 1000ms ease;
+}
+
+[data-aos="my-fade-left"].aos-animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media screen and (max-width: 900px) {
+  .project[data-aos]:nth-child(even) {
+    opacity: 0;
+    transform: translateX(10rem);
+    transition: opacity 1000ms ease, transform 1000ms ease;
+  }
+  .project[data-aos]:nth-child(even).aos-animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .project[data-aos]:nth-child(odd) {
+    opacity: 0;
+    transform: translateX(-10rem);
+    transition: opacity 1000ms ease, transform 1000ms ease;
+  }
+  .project[data-aos]:nth-child(odd).aos-animate {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -427,7 +459,7 @@ section {
   border-radius: 0.4rem;
   position: relative;
   overflow: hidden;
-  transition: transform 500ms ease-in-out, box-shadow 500ms linear;
+  transition: opacity 1000ms ease, transform 500ms ease-in-out, box-shadow 500ms linear;
 }
 
 .project:hover {
@@ -444,8 +476,7 @@ section {
 .project-img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .project-content {

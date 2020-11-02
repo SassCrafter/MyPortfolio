@@ -1,0 +1,60 @@
+// Aos
+$aos-t: 1000ms;
+$aos-f: ease;
+
+[data-aos="my-fade-(left)"] {
+  @include media("pc") {
+    transform: translateX(0);
+    opacity: 0;
+    transition: opacity $aos-t $aos-f, transform $aos-t $aos-f;
+    &.aos-animate {
+      opacity: 1;
+    }
+  }
+}
+
+[data-aos="my-fade-right"] {
+  opacity: 0;
+  transform: translateX(-10rem);
+  transition: opacity $aos-t $aos-f, transform $aos-t $aos-f;
+
+  &.aos-animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+[data-aos="my-fade-left"] {
+  opacity: 0;
+  transform: translateX(10rem);
+  transition: opacity $aos-t $aos-f, transform $aos-t $aos-f;
+
+  &.aos-animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: $pc) {
+  .project[data-aos] {
+    &:nth-child(even) {
+      opacity: 0;
+      transform: translateX(10rem);
+      transition: opacity $aos-t $aos-f, transform $aos-t $aos-f;
+
+      &.aos-animate {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    &:nth-child(odd) {
+      opacity: 0;
+      transform: translateX(-10rem);
+      transition: opacity $aos-t $aos-f, transform $aos-t $aos-f;
+
+      &.aos-animate {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+}

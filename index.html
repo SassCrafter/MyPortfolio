@@ -13,6 +13,9 @@
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
 
+    <!-- AOS library-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- Main Styles-->
     <link rel="stylesheet" href="./SassCrafter/dist/css/main.css">
     <title>SassCrafter | Home</title>
@@ -93,7 +96,7 @@
         <h2 class="title">check out some <span class="lower">of</span> my works</h2>
         <p class="subtitle">Right now this section is for Frontend Mentor Challenges</p>
         <div class="grid">
-           <article class="project">
+           <article class="project" data-aos="my-fade-right">
                <a href="./Four Cards/four-card-feature-section-master/index.html" class="project-link">
                     <img src="./SassCrafter/dist/img/projects/four-cards.jpg" alt="Four Cards Project" class="project-img">
                </a>
@@ -114,7 +117,7 @@
                </div>
            </article>
            <!-- Project end-->
-           <article class="project">
+           <article class="project" data-aos="my-fade-(left)">
                <a href="./Coming soon/index.html" class="project-link">
                     <img src="./SassCrafter/dist/img/projects/coming-soon.jpg" alt="Coming Soon Project" class="project-img">
                </a>
@@ -135,7 +138,7 @@
                </div>
            </article>
            <!-- Project end-->
-           <article class="project">
+           <article class="project" data-aos="my-fade-left">
                <a href="./signup-form-master/dist/index.html" class="project-link">
                     <img src="./SassCrafter/dist/img/projects/sign-up-form.jpg" alt="Sign Up form" class="project-img">
                </a>
@@ -156,7 +159,7 @@
                </div>
            </article>
            <!-- Project end-->
-           <article class="project four-cards">
+           <article class="project" data-aos="my-fade-right">
                <a href="./testimonials-grid-section-main/dist/index.html" class="project-link">
                     <img src="./SassCrafter/dist/img/projects/testimonials.jpg" alt="Testimonials Grid" class="project-img">
                </a>
@@ -177,7 +180,7 @@
                </div>
            </article>
            <!-- Project end-->
-           <article class="project four-cards">
+           <article class="project" data-aos="my-fade-(left)">
                <a href="./fylo-landing-page-with-two-column-layout-master/dist/index.html" class="project-link">
                     <img src="./SassCrafter/dist/img/projects/fylo.jpg" alt="Fylo landing page" class="project-img">
                </a>
@@ -198,7 +201,7 @@
                </div>
            </article>
            <!-- Project end-->
-           <article class="project four-cards">
+           <article class="project" data-aos="my-fade-left">
                <a href="./single-price-grid-component-master/index.html" class="project-link">
                     <img src="./SassCrafter/dist/img/projects/price-grid.jpg" alt="Price grid project" class="project-img">
                </a>
@@ -227,5 +230,11 @@
   <script src="./SassCrafter/dist/js/preloader.js"></script>
   <script src="./SassCrafter/dist/js/mobile-menu.js"></script>
   <script src="./SassCrafter/dist/js/typing-effect.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+        duration: 1000,
+    });
+  </script>
 </body>
 </html>

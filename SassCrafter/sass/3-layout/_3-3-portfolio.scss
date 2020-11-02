@@ -11,7 +11,8 @@
   //padding: 1.5rem 1rem;
   position: relative;
   overflow: hidden;
-  transition: transform $t-time ease-in-out, box-shadow $t-time linear;
+  transition: opacity $aos-t $aos-f, transform $t-time ease-in-out,
+    box-shadow $t-time linear;
 
   &:hover {
     transform: translateY(-1rem);

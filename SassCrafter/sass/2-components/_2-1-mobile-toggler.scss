@@ -2,9 +2,18 @@
   width: 3rem;
   height: 3rem;
   margin-right: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   cursor: pointer;
 }
@@ -14,6 +23,8 @@
   height: 3px;
   background: $main-color;
   position: relative;
+  -webkit-transition: height $t-time 200ms;
+  -o-transition: height $t-time 200ms;
   transition: height $t-time 200ms;
 
   &::before,
@@ -23,7 +34,13 @@
     height: 3px;
     background: inherit;
     position: absolute;
+    -webkit-transition: top $t-time ease $t-time, -webkit-transform $t-time ease;
+    transition: top $t-time ease $t-time, -webkit-transform $t-time ease;
+    -o-transition: transform $t-time ease, top $t-time ease $t-time;
     transition: transform $t-time ease, top $t-time ease $t-time;
+    transition: transform $t-time ease, top $t-time ease $t-time, -webkit-transform $t-time ease;
+    transition: transform $t-time ease, top $t-time ease $t-time,
+      -webkit-transform $t-time ease;
   }
   &::before {
     top: -8px;
@@ -40,12 +57,24 @@
     &::before,
     &::after {
       top: 0;
+      -webkit-transition: top $t-time ease,
+        -webkit-transform $t-time ease $t-time;
+      transition: top $t-time ease, -webkit-transform $t-time ease $t-time;
+      -o-transition: transform $t-time ease $t-time, top $t-time ease;
+      -webkit-transition: top $t-time ease, -webkit-transform $t-time ease $t-time;
       transition: transform $t-time ease $t-time, top $t-time ease;
+      transition: transform $t-time ease $t-time, top $t-time ease, -webkit-transform $t-time ease $t-time;
+      transition: transform $t-time ease $t-time, top $t-time ease,
+        -webkit-transform $t-time ease $t-time;
     }
     &::before {
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
       transform: rotate(45deg);
     }
     &::after {
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
       transform: rotate(-45deg);
     }
   }
