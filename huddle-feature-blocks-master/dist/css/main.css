@@ -1,0 +1,316 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.flex {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+}
+
+.large {
+  font-size: 2.6rem;
+  text-transform: capitalize;
+  margin: 5rem 0 1.5rem 0;
+}
+
+.lead {
+  font-size: 1.84rem;
+  opacity: 0.8;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.bg-dark {
+  background: #00252e;
+  color: #fff;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  display: inline-block;
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 1.2rem 2rem;
+  color: #00252e;
+  text-transform: capitalize;
+  font-size: 1.4rem;
+  font-weight: 600;
+  transition: opacity 250ms linear;
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+.btn-primary {
+  color: #fff;
+  background: #ff52bf;
+}
+
+.btn-block {
+  display: block;
+  width: 80%;
+  max-width: 30rem;
+  border-radius: 500rem;
+  text-align: center;
+  margin: 0 auto 3rem auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.sm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.sm li {
+  margin: 0 1rem;
+}
+
+.sm li a {
+  display: inline-block;
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  text-align: center;
+  transition: color 250ms linear, border-color 250ms linear;
+}
+
+.sm li a:hover {
+  color: #ff52bf;
+  border-color: #ff52bf;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background: #fff;
+  color: #00252e;
+}
+
+section {
+  padding: 2rem 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #00252e;
+}
+
+img {
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  height: 7rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 11;
+}
+
+.header .flex {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 15rem;
+}
+
+.showcase {
+  width: 100%;
+  height: 100vh;
+  background: #ebfbff;
+  position: relative;
+  padding-top: 3rem;
+  text-align: center;
+}
+
+.showcase::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: url("../images/bg-hero-mobile.svg") no-repeat center center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.showcase .flex {
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+
+.main {
+  height: auto;
+  padding-bottom: 20rem;
+  position: relative;
+}
+
+.card {
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  padding: 3rem;
+  text-align: center;
+}
+
+.card:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.card-heading {
+  font-size: 1.7rem;
+  margin-top: 2rem;
+}
+
+.card-subheading {
+  font-size: 1.4rem;
+  opacity: 0.6;
+}
+
+.call-to-action {
+  width: calc(100% - 4rem);
+  height: 18rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: -9rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+}
+
+.call-to-action .btn {
+  margin: 0 auto;
+}
+
+.footer {
+  padding: 12rem 0 2rem 0;
+}
+
+.footer-logo {
+  filter: brightness(0) invert(1);
+  width: 15rem;
+}
+
+.footer-list li:not(:last-child) {
+  margin: 0.5rem 0;
+}
+
+.footer-link {
+  color: #fff;
+  display: inline-block;
+  padding: 0.5rem 0;
+  font-size: 1.4rem;
+  transition: color 250ms linear;
+}
+
+.footer-link:hover {
+  color: #ff52bf;
+}
+
+.footer-icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 2rem;
+}
+
+.footer .check {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+@media screen and (max-width: 350px) {
+  .showcase {
+    height: auto;
+    padding: 4rem 0 2rem 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .flex {
+    flex-direction: row;
+    justify-content: space-between !important;
+  }
+  .flex-item {
+    width: 44%;
+  }
+  .grid {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+  .showcase {
+    text-align: left;
+    justify-content: space-between;
+  }
+  .showcase .btn {
+    margin-left: 0;
+  }
+  .main {
+    padding-bottom: 10rem;
+  }
+  .card {
+    margin: 3rem 0;
+  }
+  .call-to-action {
+    padding: 5rem 0;
+  }
+}
