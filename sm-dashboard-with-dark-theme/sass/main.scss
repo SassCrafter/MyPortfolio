@@ -1,0 +1,388 @@
+// Vars
+$font-stack: "Inter", Arial, Helvetica, sans-serif;
+$max-width: 1440px;
+
+// Colors
+$body-bg: #fff;
+$lime-green: hsl(163, 72%, 41%);
+$bright-red: hsl(356, 69%, 56%);
+
+$facebook: hsl(208, 92%, 53%);
+$twitter: hsl(203, 89%, 53%);
+$instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+$youtube: hsl(348, 97%, 39%);
+
+$white-bg: hsl(0, 0%, 100%);
+$pale-blue: hsl(225, 100%, 98%);
+$light-blue: hsl(227, 47%, 96%); // Card bg
+$dark-blue: hsl(228, 12%, 44%);
+$very-dark-blue: hsl(230, 17%, 14%);
+
+$toggle-bg: hsl(230, 22%, 74%);
+
+// Dark bg colors
+$dark-text: hsl(228, 34%, 66%);
+$card-bg-dark: hsl(228, 28%, 20%);
+$toggle-dark-bg: linear-gradient(
+  to right,
+  hsl(210, 78%, 56%),
+  hsl(146, 68%, 55%)
+);
+// Utilities
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.flex {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+}
+
+// Text
+.large {
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.lead {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+// Reset
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-stack;
+  background: $white-bg;
+  color: $dark-blue;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: $very-dark-blue;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $very-dark-blue;
+}
+
+img {
+  max-width: 100%;
+}
+
+// Header
+.header {
+  height: 250px;
+  padding: 2rem 0;
+  background: $pale-blue;
+  border-bottom-left-radius: 2.5rem;
+  border-bottom-right-radius: 2.5rem;
+
+  .flex {
+    justify-content: center;
+  }
+
+  .flex-item {
+    &:nth-child(2) {
+      border-top: 1px solid $dark-blue;
+      height: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h5 {
+        margin-top: 1rem;
+        color: $dark-blue;
+        font-size: 0.95rem;
+      }
+    }
+  }
+}
+
+// Dark mode Switch
+
+// Switch - the box around the slider
+.switch {
+  display: inline-block;
+  position: relative;
+  width: 4rem;
+  height: 2rem;
+}
+
+// Hide default checkbox
+.switch input {
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+
+// Slider
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: $toggle-bg;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: 0.4s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0.25rem;
+    bottom: 0.16rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    background: $white-bg;
+    transition: left 250ms ease;
+  }
+}
+
+.dark-toggler:checked + .slider {
+  &::before {
+    left: 2rem;
+  }
+}
+
+// Main
+.main {
+  margin-top: -2.5rem;
+  padding-bottom: 2rem;
+}
+
+// SM
+.sm {
+  margin-bottom: 3rem;
+}
+
+// Cards
+.card {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background: $light-blue;
+  border-radius: 0.5rem;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &-facebook::before {
+    background: $facebook;
+  }
+  &-twitter::before {
+    background: $twitter;
+  }
+  &-instagram::before {
+    background: $instagram;
+  }
+  &-youtube::before {
+    background: $youtube;
+  }
+
+  .icon-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .username {
+    margin-bottom: 1.5rem;
+    span {
+      font-weight: 700;
+    }
+  }
+
+  .followers {
+    font-size: 4rem;
+    span {
+      display: block;
+      font-size: 1rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      //color: $pale-blue;
+    }
+  }
+
+  .today {
+    span {
+      text-transform: capitalize;
+      font-weight: 700;
+    }
+    &-icon {
+      width: 1rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+  .gain span {
+    color: $lime-green;
+  }
+  .lost span {
+    color: $bright-red;
+  }
+
+  &-icon {
+    margin-right: 0.5rem;
+    width: 1.5rem;
+  }
+}
+
+// Overview
+.overview {
+  &-title {
+    color: $dark-blue;
+    margin-bottom: 1rem;
+  }
+
+  .card {
+    flex-direction: row;
+    //padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 0;
+    }
+    h4 {
+      text-transform: capitalize;
+      color: $dark-blue;
+      margin-bottom: 2rem;
+    }
+    .img-block {
+      width: 1.75rem;
+      display: block;
+      margin-bottom: 2rem;
+      margin-left: auto;
+    }
+  }
+}
+
+// Dark mode
+.dark {
+  background: $very-dark-blue;
+  color: $white-bg;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: $white-bg;
+  }
+
+  .header {
+    background: $very-dark-blue;
+  }
+
+  .slider {
+    background: $toggle-dark-bg;
+
+    &::before {
+      background: $very-dark-blue;
+    }
+  }
+  .card {
+    background: $card-bg-dark;
+
+    &-content {
+      span,
+      h4 {
+        color: $dark-text;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .flex {
+    flex-direction: row;
+  }
+  .header {
+    .flex {
+      justify-content: space-between;
+
+      &-item {
+        &:nth-child(2) {
+          border-color: transparent;
+        }
+      }
+    }
+
+    h5 {
+      margin-right: 1rem;
+    }
+  }
+
+  .main {
+    margin-top: -6rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .large {
+    font-size: 2.2rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .lead {
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+}
